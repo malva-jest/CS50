@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="src/styles.css" rel="stylesheet" />
+    <title>Trivia!</title>
+
+    <script>
+      function displayAnswer1(element) {
+        if (element == document.getElementById("option-11")) {
+          document.getElementById("option-11").style.border = "3px solid red";
+          document.getElementById("option-11").style.backgroundColor = "red";
+          document.getElementById("result-11").innerHTML = "Incorrect!!";
+          showCorrectAnswer4();
+        }
+        if (element == document.getElementById("option-12")) {
+          document.getElementById("option-12").style.border = "3px solid red";
+          document.getElementById("option-12").style.background = "red";
+          document.getElementById("result-12").innerHTML = "Incorrect!";
+          showCorrectAnswer4();
+        }
+        if (element == document.getElementById("option-13")) {
+          document.getElementById("option-13").style.border = "3px solid red";
+          document.getElementById("option-13").style.background = "red";
+          document.getElementById("result-13").innerHTML = "Incorrect!";
+          showCorrectAnswer4();
+        }
+        if (element == document.getElementById("option-14")) {
+          document.getElementById("option-14").style.border =
+            "3px solid limegreen";
+          document.getElementById("option-14").style.backgroundColor =
+            "limegreen";
+          document.getElementById("result-14").innerHTML = "Correct!!";
+        }
+      }
+
+      function showCorrectAnswer4() {
+        //Checks if child node exists, if does removes
+        //This is here so it doesn't keep putting the paragraph element over and over
+        //Have to click the show answer paragraph or else an error will pop up
+        var parent = document.getElementById("showanswer4");
+        if (parent.hasChildNodes()) {
+          parent.removeChild(child);
+        }
+        let showAnswer4 = document.createElement("p");
+        showAnswer4.innerHTML = "Show Correct Answer!";
+        showAnswer4.style.position = "relative";
+        showAnswer4.style.top = "-180px";
+        showAnswer4.style.fontSize = "1.75rem";
+        //Below element did not exist in original code
+        document.getElementById("showanswer4").appendChild(showAnswer4);
+        showAnswer4.addEventListener("click", () => {
+          document.getElementById("option-14").style.border =
+            "3px solid limegreen";
+          document.getElementById("option-14").style.backgroundColor =
+            "limegreen";
+          document.getElementById("result-14").innerHTML = "Correct!";
+          document.getElementById("showanswer4").removeChild(showAnswer4);
+        });
+      }
+
+      function myfun() {
+        //Targeting the element
+        var v1 = document.getElementById("form").elements[0];
+
+        console.log("came", v1);
+
+        //Then checking the value of targeted element.
+        if (v1.value == "Blue" || v1.value == "blue") {
+          v1.style.color = "green";
+          v1.value = "Correct!";
+        } else {
+          v1.style.color = "red";
+          v1.value = "Incorrect!";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>Trivia!</h1>
+    </div>
+    <div class="container">
+      <div class="section">
+        <h2>Part 1: Multiple Choice</h2>
+        <hr />
+        <h3>What is my first name?</h3>
+        <form method="GET">
+          <span id="block-11" style="padding: 10px;">
+            <label for="option-11" style="padding: 5px; font-size: 2.5rem;">
+              <input
+                type="button"
+                value="Zahra"
+                id="option-11"
+                style="
+                  transform: scale(1.6);
+                  margin-right: 10px;
+                  vertical-align: middle;
+                  margin-top: -2px;
+                "
+                onclick="displayAnswer1(this)"
+              />
+            </label>
+            <span id="result-11"></span>
+          </span>
+          <span id="block-12" style="padding: 10px;">
+            <label for="option-12" style="padding: 5px; font-size: 2.5rem;">
+              <input
+                type="button"
+                value="Melika"
+                id="option-12"
+                style="
+                  transform: scale(1.6);
+                  margin-right: 10px;
+                  vertical-align: middle;
+                  margin-top: -2px;
+                "
+                onclick="displayAnswer1(this)"
+              />
+            </label>
+            <span id="result-12"></span>
+          </span>
+          <span id="block-13" style="padding: 10px;">
+            <label for="option-13" style="padding: 5px; font-size: 2.5rem;">
+              <input
+                type="button"
+                value="Aysa"
+                id="option-13"
+                style="
+                  transform: scale(1.6);
+                  margin-right: 10px;
+                  vertical-align: middle;
+                  margin-top: -2px;
+                "
+                onclick="displayAnswer1(this)"
+              />
+            </label>
+            <span id="result-13"></span>
+          </span>
+          <span id="block-14" style="padding: 10px;">
+            <label for="option-14" style="padding: 5px; font-size: 2.5rem;">
+              <input
+                type="button"
+                value="Aylin"
+                id="option-14"
+                style="
+                  transform: scale(1.6);
+                  margin-right: 10px;
+                  vertical-align: middle;
+                  margin-top: -2px;
+                "
+                onclick="displayAnswer1(this)"
+              />
+            </label>
+            <span id="result-14"></span>
+          </span>
+        </form>
+      </div>
+      <span id="showanswer4"></span>
+
+      <div class="section">
+        <h2>Part 2: Free Response</h2>
+        <hr />
+
+        <h3>What is my favorite color?</h3>
+        <form id="form">
+          <input type="text" name="q" />
+          <input type="button" value="Check Answer" onclick="myfun()" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

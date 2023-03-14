@@ -1,0 +1,75 @@
+Let's break down a few functions as much as possible:
+
+vote()
+remember to update global preferences once vote matches valid candidate
+you'll be comparing strings here (maybe candidates[i].name with name from vote())
+    keep in mind that preferences are indexed from 0 ---> n - 1
+- A voter is permitted a vote for each candidate
+    - a vote is carried out in rank order
+
+
+
+tablulate()
+update the votes part of candidate struct for each preferred candidate
+"Once you’ve cast a vote for a voter’s first non-eliminated candidate,
+    you’ll want to stop there, not continue down their ballot!"
+
+print_winner()
+if number of votes for a given candidate > than min for some candidate
+
+
+find_min()
+if some candidate has lowest vote then eliminate
+    then reset the vote count and check again
+        eliminate candidate with lowest vote
+
+
+is_tie()
+check if candidates have equal votes
+    don't just check initial preference
+        also check subsequent choices
+
+
+eliminate()
+remove candidate if he has lowest votes
+    do so in the subsequent preference
+        might need to reset a vote count
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------
+FUNCTIONS SKETCH    
+
+Vote()
+rank = 0;
+    voter = 1;
+    int top_position = preferences[0][1];
+
+    for (int i = 0; candidate_count < i; i++)
+    {
+        if (strcmp(name, candidates[i].name) == 0)
+        {
+           candidates[i].votes++;
+           return true;
+        }
+
+        if (candidates[i].votes > rank)
+        {
+            rank = candidates[i].votes;
+        }
+    }
+    for (i = 0; i < voter_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            rank == candidates[i].votes; // j ??
+            return true;
+        }
+    }

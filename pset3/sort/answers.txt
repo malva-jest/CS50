@@ -1,0 +1,46 @@
+sort1 uses: bubble
+
+Running time:
+ran5000 = real    0m0.076s
+ran10000 = real    0m0.299s
+ran50000 = real    0m9.193s
+rev5000 = real    0m0.091s
+rev10000 = real    0m0.274s
+rev50000 = real    0m7.132s
+sort5000 = real    0m0.050s
+sort10000 = real    0m0.083s
+sort50000 = real    0m1.839s
+
+How do you know?: I receive Big Omega n^2 when sorting the best case sorted50000.txt file.
+
+-----------------------
+
+sort2 uses: Merge
+
+Running time:
+ran5000 = real    0m0.022s
+ran10000 = real    0m0.068s
+ran50000 = real    0m1.360s
+rev5000 = real    0m0.026s
+rev10000 = real    0m0.064s
+rev50000 = real    0m2.809s
+sort5000 = real    0m0.043s
+sort10000 = real    0m0.060s
+sort50000 = real    0m2.609s
+
+
+How do you know?: I receive Big Omega of n when sorting the best case sorted50000.txt file.
+
+-----------------------
+
+sort3 uses: selection
+
+Running time:
+ran5000 = real    0m0.127s
+ran10000 = real  ÷   0m0.167s
+sort50000 = real    0m5.243s
+
+How do you know?: Big Omerga is smaller for merge sort than it is for bubble sort. This holds true when comparing the Big Omega value for sort1 and sort2.
+
+
+-----------------------

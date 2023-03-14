@@ -1,0 +1,7 @@
+Ask the user for an integer
+    check if the integer is below 1 or higher than 8
+    repeat the request for an integer if not
+Once an appropriate integer ( n >= 1 || n <= n) has been received
+    create a switch with no breaks so that the code is executed in a cascade ...
+    print a # sign for the integer provided minus the remaining lines of the line equivalent of the integer given
+    skip to the next line and repeat the above until the loop reaches the value of the integer provided
